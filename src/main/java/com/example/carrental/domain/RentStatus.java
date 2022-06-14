@@ -6,5 +6,6 @@ public enum RentStatus {
     RENTING,
     FINISHING,
     CANCELING,
-    REFRESHING
+    REFRESHING,
+    IN_PROGRESS
 }

@@ -12,7 +12,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -58,5 +57,6 @@ public class RentController {
     @PutMapping(value = "/calculate/{rentId}/{equipmentId}")
     public ResponseEntity<BigDecimal> calculatePriceForRentId(@PathVariable Long rentId, @PathVariable Long equipmentId, @RequestParam("category") String category) throws RentNotFoundException, EquipmentNotFoundException {
         return ResponseEntity.ok(rentService.calculateRentCostFactory(rentId, equipmentId, category));
+
     }
 }

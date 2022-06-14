@@ -1,22 +1,22 @@
 package com.example.carrental.domain;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 @NamedNativeQuery(
-        name="Car.findByDate",
-        query ="SELECT *  FROM CARS C WHERE " +
+        name = "Car.findByDate",
+        query = "SELECT *  FROM CARS C WHERE " +
                 "ID NOT IN " +
                 "(SELECT R.CAR_ID FROM RENTS R WHERE " +
-                        "(:START_RENT BETWEEN R.DATE_START_RENT AND R.DATE_END_RENT) OR" +
+                "(:START_RENT BETWEEN R.DATE_START_RENT AND R.DATE_END_RENT) OR" +
                 "(:END_RENT BETWEEN R.DATE_START_RENT AND R.DATE_END_RENT) OR " +
-                         "(:START_RENT >= R.DATE_START_RENT AND :END_RENT <= DATE_END_RENT  )" +
+                "(:START_RENT >= R.DATE_START_RENT AND :END_RENT <= DATE_END_RENT  )" +
                 "AND C.CATEGORY = :CAR_CLASS)",
         resultClass = Car.class
 )
@@ -25,7 +25,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity()
-@Table(name= "cars")
+@Table(name = "cars")
 //@builder
 public class Car {
 
@@ -65,10 +65,10 @@ public class Car {
     private List<Equipment> equipmentList = new ArrayList<>();
 
     @OneToMany(
-    targetEntity = Rent.class,
-    mappedBy = "car",
-    cascade = CascadeType.PERSIST,
-    fetch = FetchType.LAZY)
+            targetEntity = Rent.class,
+            mappedBy = "car",
+            cascade = CascadeType.PERSIST,
+            fetch = FetchType.LAZY)
 
     private List<Rent> rentList = new ArrayList<>();
 

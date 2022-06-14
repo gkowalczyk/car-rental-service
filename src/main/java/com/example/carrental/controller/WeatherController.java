@@ -6,6 +6,7 @@ import com.example.carrental.mapper.WeatherMapper;
 import com.example.carrental.service.WeatherService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,11 +23,19 @@ public class WeatherController {
         this.weatherMapper = weatherMapper;
     }
 
-    @GetMapping
+    @GetMapping("yourcity")
     public ResponseEntity<List<WeatherStationDto>> checkWeatherCityName(@RequestParam(value = "city") String checkCityWeather) {
         List<WeatherStation> weatherStations = weatherMapper.mapToBoard(weatherService.fetchWeatherBoards()
-                .stream().filter(w -> w.getStacja().equals(checkCityWeather))
+                .stream()
+                .filter(w -> w.getStacja().equals(checkCityWeather))
                 .collect(Collectors.toList()));
+        return ResponseEntity.ok(weatherMapper.mapToBoardDto(weatherStations));
+
+    }
+
+    @GetMapping("allcity")
+    public ResponseEntity<List<WeatherStationDto>> checkWeatherCityNames() {
+        List<WeatherStation> weatherStations = weatherMapper.mapToBoard(weatherService.fetchWeatherBoards());
         return ResponseEntity.ok(weatherMapper.mapToBoardDto(weatherStations));
     }
 }

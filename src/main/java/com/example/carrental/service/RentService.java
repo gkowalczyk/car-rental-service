@@ -62,6 +62,8 @@ public class RentService {
         rent.setUser(user);
         rent.setCar(car);
         rent.setRentStatus(RentStatus.BOOKING);
+        rent.setStartRent(rent.getStartRent());
+        rent.setEndRent((rent.getEndRent()));
         rent = repository.save(rent);
         userRepository.save(user);
         log.info("Reservation card for:" + userId + "confirmed");
@@ -107,7 +109,9 @@ public class RentService {
                 BigDecimal calculate = carOrder.getPrice();
                 BigDecimal rentTime = new BigDecimal(ChronoUnit.DAYS.between(rentUpdate.getStartRent(), rentUpdate.getEndRent()));
                 rentUpdate.setTotalCost(calculate.multiply(rentTime).add(equipment.getPrice()));
+                rentUpdate.setRentStatus(RentStatus.IN_PROGRESS);
                 repository.save(rentUpdate);
+                log.info("Calculation for case:" + ECONOMIC + " confirmed");
                return calculate;
             case MIDDLE:
                 CarOrder carOrderPlus = new LowComfortCar();
@@ -115,7 +119,9 @@ public class RentService {
                 BigDecimal calculate1 = carOrderPlus.getPrice();
                 BigDecimal rentTime1 = new BigDecimal(ChronoUnit.DAYS.between(rentUpdate.getStartRent(), rentUpdate.getEndRent()));
                 rentUpdate.setTotalCost(calculate1.multiply(rentTime1).add(equipment.getPrice()));
+                rentUpdate.setRentStatus(RentStatus.IN_PROGRESS);
                 repository.save(rentUpdate);
+                log.info("Calculation for case:" + MIDDLE + " confirmed");
                 return calculate1;
             case VIP:
                 CarOrder carOrderPlusPlus = new LowComfortCar();
@@ -124,10 +130,12 @@ public class RentService {
                 BigDecimal calculate2 = carOrderPlusPlus.getPrice();
                 BigDecimal rentTime2 = new BigDecimal(ChronoUnit.DAYS.between(rentUpdate.getStartRent(), rentUpdate.getEndRent()));
                 rentUpdate.setTotalCost(calculate2.multiply(rentTime2).add(equipment.getPrice()));
+                rentUpdate.setRentStatus(RentStatus.IN_PROGRESS);
                 repository.save(rentUpdate);
+                log.info("Calculation for case:" + VIP + " confirmed");
                 return calculate2;
             default:
-                return null;
+                return BigDecimal.ZERO;
         }
     }
 }

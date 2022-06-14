@@ -1,6 +1,7 @@
 package com.example.carrental;
 
 import com.example.carrental.service.JWTAuthorizationFilter;
+import com.example.carrental.service.RentService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
@@ -28,11 +29,12 @@ public class CarRentalApplication {
                     .authorizeRequests()
                     .antMatchers(HttpMethod.POST, "/v1/users/login").permitAll()
                     .antMatchers(HttpMethod.POST, "/v1/rents/newcardrent/{userId}").permitAll()
+                    .antMatchers(HttpMethod.GET, "/v1/weather").permitAll()
                     .antMatchers(HttpMethod.GET, "allcars").permitAll()
                     .antMatchers(HttpMethod.GET, "allusers").permitAll()
                     .antMatchers(HttpMethod.DELETE, "/delete/{userId}").permitAll()
                     .antMatchers(HttpMethod.DELETE, "/cancelrent/{cardId}").permitAll()
-           // "/update/{rentId}"
+                    .antMatchers(HttpMethod.PUT, "/v1/rents/calculate/{rentId}/{equipmentId}").permitAll()
                     .anyRequest().authenticated();
         }
     }
