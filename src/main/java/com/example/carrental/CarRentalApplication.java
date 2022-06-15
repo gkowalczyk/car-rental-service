@@ -29,11 +29,16 @@ public class CarRentalApplication {
                     .authorizeRequests()
                     .antMatchers(HttpMethod.POST, "/v1/users/login").permitAll()
                     .antMatchers(HttpMethod.POST, "/v1/rents/newcardrent/{userId}").permitAll()
-                    .antMatchers(HttpMethod.GET, "/v1/weather").permitAll()
+                    .antMatchers(HttpMethod.GET, "/v1/accessories/{equipmentId}").permitAll()
                     .antMatchers(HttpMethod.GET, "allcars").permitAll()
+                    .antMatchers(HttpMethod.GET, "/v1/accessories/allaccessories").permitAll()
+
                     .antMatchers(HttpMethod.GET, "allusers").permitAll()
+                    .antMatchers(HttpMethod.DELETE, "/delete/{carId}").permitAll()
                     .antMatchers(HttpMethod.DELETE, "/delete/{userId}").permitAll()
-                    .antMatchers(HttpMethod.DELETE, "/cancelrent/{cardId}").permitAll()
+                    .antMatchers(HttpMethod.DELETE, "/v1/accessories").permitAll()
+                    .antMatchers(HttpMethod.DELETE, "/v1/cars/{cardId}/").permitAll()
+                    .antMatchers(HttpMethod.DELETE, "/v1/cancelrent/{cardId}").permitAll()
                     .antMatchers(HttpMethod.PUT, "/v1/rents/calculate/{rentId}/{equipmentId}").permitAll()
                     .anyRequest().authenticated();
         }

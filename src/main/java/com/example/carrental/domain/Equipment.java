@@ -28,4 +28,10 @@ public class Equipment {
 
     @ManyToMany(mappedBy = "equipmentList")
     private List<Car> carList = new ArrayList<>();
+
+    public Equipment(Long id, String description, BigDecimal price) {
+        this.id = id;
+        this.description = description;
+        this.price = price;
+    }
 }

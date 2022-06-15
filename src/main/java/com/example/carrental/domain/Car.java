@@ -62,7 +62,7 @@ public class Car {
             joinColumns = {@JoinColumn(name = "CAR_ID")},
             inverseJoinColumns = {@JoinColumn(name = "EQUIPMENT_ID")}
     )
-    private List<Equipment> equipmentList = new ArrayList<>();
+    private List<Equipment> equipmentList;
 
     @OneToMany(
             targetEntity = Rent.class,

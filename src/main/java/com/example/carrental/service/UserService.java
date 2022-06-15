@@ -22,8 +22,11 @@ import java.util.stream.Collectors;
 @Slf4j
 public class UserService {
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
+
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     public User createUser(final User user) {
         user.setActive(true);
@@ -52,7 +55,7 @@ public class UserService {
                 .setExpiration(new Date(System.currentTimeMillis() + 3600000))
                 .signWith(SignatureAlgorithm.HS512,
                         secretKey.getBytes()).compact();
-        return "kodilla_token " + token;
+        return "login_token " + token;
 
     }
 

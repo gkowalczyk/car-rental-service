@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 public class JWTAuthorizationFilter extends OncePerRequestFilter {
 
     private final String HEADER = "Authorization";
-    private final String PREFIX = "kodilla_token ";
+    private final String PREFIX = "login_token ";
     private final String SECRET = "mySecretKey";
 
     @Override

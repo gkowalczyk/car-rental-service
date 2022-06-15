@@ -63,7 +63,7 @@ public class CarService {
 
     public void deleteCarFromDB(final Long id) throws CarNotFoundException {
         try {
-            carRepository.findById(id);
+            carRepository.deleteById(id);
             log.info("Delete car from DB");
         } catch (DataAccessException e) {
             throw new CarNotFoundException("Car not found for ID=" + id);

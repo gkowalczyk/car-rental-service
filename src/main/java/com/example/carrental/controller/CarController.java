@@ -5,6 +5,8 @@ import com.example.carrental.dto.CarDto;
 import com.example.carrental.exception.CarNotFoundException;
 import com.example.carrental.mapper.CarMapper;
 import com.example.carrental.service.CarService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -13,18 +15,14 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/cars")
+@RequiredArgsConstructor
+@RequestMapping("v1/cars")
 public class CarController {
 
+    @Autowired
     private final CarService carService;
+    @Autowired
     private final CarMapper carMapper;
-
-
-    public CarController(CarService carService, CarMapper carMapper) {
-        this.carService = carService;
-        this.carMapper = carMapper;
-    }
-
 
     @GetMapping("allcars")
     public ResponseEntity<List<CarDto>> getAllCars() {
@@ -55,7 +53,7 @@ public class CarController {
         return ResponseEntity.ok(carMapper.mapToCarDto(updateCar));
     }
 
-    @DeleteMapping(value = "{carId}")
+    @DeleteMapping(value = "/delete/{carId}")
     public ResponseEntity<Void> deleteCarId(@PathVariable Long carId) throws CarNotFoundException {
         carService.deleteCarFromDB(carId);
         return ResponseEntity.ok().build();

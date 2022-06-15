@@ -38,4 +38,6 @@ public class WeatherController {
         List<WeatherStation> weatherStations = weatherMapper.mapToBoard(weatherService.fetchWeatherBoards());
         return ResponseEntity.ok(weatherMapper.mapToBoardDto(weatherStations));
     }
+
 }
+
