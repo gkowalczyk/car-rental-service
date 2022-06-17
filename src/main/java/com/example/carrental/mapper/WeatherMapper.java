@@ -1,7 +1,7 @@
 package com.example.carrental.mapper;
 
 import com.example.carrental.domain.WeatherStation;
-import com.example.carrental.domain.WeatherStationDto;
+import com.example.carrental.dto.WeatherStationDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

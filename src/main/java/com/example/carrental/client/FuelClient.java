@@ -1,6 +1,8 @@
 package com.example.carrental.client;
 
+import com.example.carrental.config.FuelApiConfig;
 import com.example.carrental.config.WeatherApiConfig;
+import com.example.carrental.dto.FuelStationDto;
 import com.example.carrental.dto.WeatherStationDto;
 import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
@@ -20,21 +22,21 @@ import static org.hibernate.tool.schema.SchemaToolingLogging.LOGGER;
 @Component
 @RequiredArgsConstructor
 @EqualsAndHashCode
-public class WeatherClient {
+public class FuelClient {
 
     private final RestTemplate restTemplate;
-    private final WeatherApiConfig weatherApiConfig;
+    private final FuelApiConfig fuelApiConfig;
 
-    public List<WeatherStationDto> getWeather() {
+    public List<FuelStationDto> getFuelStation() {
 
-        URI url = UriComponentsBuilder.fromHttpUrl(weatherApiConfig.getWeatherApiEndpoint() + "/data/synop")
+        URI url = UriComponentsBuilder.fromHttpUrl(fuelApiConfig.getFuelStationApiEndpoint() + "InfrastructureFuelStation")
                 .build()
                 .encode()
                 .toUri();
 
         try {
-            WeatherStationDto[] weatherStationDto = restTemplate.getForObject(url, WeatherStationDto[].class);
-            return ofNullable(weatherStationDto)
+            FuelStationDto[] fuelStationDtos = restTemplate.getForObject(url, FuelStationDto[].class);
+            return ofNullable(fuelStationDtos)
                     .map(Arrays::asList)
                     .orElse(Collections.emptyList());
         } catch (RestClientException e) {

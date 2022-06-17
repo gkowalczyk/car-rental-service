@@ -1,4 +1,4 @@
-package com.example.carrental.domain;
+package com.example.carrental.dto;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

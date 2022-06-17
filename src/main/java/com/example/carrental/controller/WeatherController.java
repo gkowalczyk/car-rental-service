@@ -1,7 +1,7 @@
 package com.example.carrental.controller;
 
 import com.example.carrental.domain.WeatherStation;
-import com.example.carrental.domain.WeatherStationDto;
+import com.example.carrental.dto.WeatherStationDto;
 import com.example.carrental.mapper.WeatherMapper;
 import com.example.carrental.service.WeatherService;
 import org.springframework.http.ResponseEntity;

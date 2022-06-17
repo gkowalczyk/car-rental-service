@@ -6,9 +6,8 @@ import org.springframework.stereotype.Component;
 
 @Getter
 @Component
-public class WeatherApiConfig {
+public class FuelApiConfig {
 
-    @Value("${weather.api.endpoint}")
-    private String weatherApiEndpoint;
-
+    @Value("https://api.ure.gov.pl/api/")
+    private String fuelStationApiEndpoint;
 }
