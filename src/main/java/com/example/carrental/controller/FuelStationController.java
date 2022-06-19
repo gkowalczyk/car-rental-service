@@ -1,9 +1,7 @@
 package com.example.carrental.controller;
 
 import com.example.carrental.domain.FuelStation;
-import com.example.carrental.domain.WeatherStation;
 import com.example.carrental.dto.FuelStationDto;
-import com.example.carrental.dto.WeatherStationDto;
 import com.example.carrental.mapper.FuelMapper;
 import com.example.carrental.service.FuelService;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("v1/station/")
+@RequestMapping("v1/stations/")
 @CrossOrigin("*")
 public class FuelStationController {
 
@@ -36,7 +34,7 @@ public class FuelStationController {
 
     }
 
-    @GetMapping("allstation")
+    @GetMapping("allstations")
     public ResponseEntity<List<FuelStationDto>> checkAllStations() {
         List<FuelStation> fuelStationList = fuelMapper.mapToFuel(fuelService.fuelStationDtos());
         return ResponseEntity.ok(fuelMapper.mapToFuelDto(fuelStationList));
