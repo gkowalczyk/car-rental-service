@@ -44,5 +44,6 @@ public class Rent {
 
     @Column(name = "renting_status")
     private RentStatus rentStatus;
+
 }
 

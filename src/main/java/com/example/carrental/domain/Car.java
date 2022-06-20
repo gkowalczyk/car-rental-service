@@ -55,6 +55,9 @@ public class Car {
     @Column(name = "isAvailable")
     private boolean isAvailable;
 
+    @Column(name = "fuelconsumption")
+    private BigDecimal fuelConsumption;
+
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
@@ -70,7 +73,7 @@ public class Car {
             cascade = CascadeType.PERSIST,
             fetch = FetchType.LAZY)
 
-    private List<Rent> rentList = new ArrayList<>();
+    private List<Rent> rentList;
 
 
     public Car(Long id, String registration, String model, String company, String category, String gearBox, BigDecimal dailyCost, boolean isAvailable) {

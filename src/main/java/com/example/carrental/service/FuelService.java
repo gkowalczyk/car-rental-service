@@ -1,9 +1,7 @@
 package com.example.carrental.service;
 
 import com.example.carrental.client.FuelClient;
-import com.example.carrental.client.WeatherClient;
 import com.example.carrental.dto.FuelStationDto;
-import com.example.carrental.dto.WeatherStationDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

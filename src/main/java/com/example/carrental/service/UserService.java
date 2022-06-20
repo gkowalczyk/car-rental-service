@@ -1,14 +1,11 @@
 package com.example.carrental.service;
 
-import com.example.carrental.domain.Car;
 import com.example.carrental.domain.User;
-import com.example.carrental.exception.CarNotFoundException;
 import com.example.carrental.exception.UserNotFoundException;
 import com.example.carrental.repository.UserRepository;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -59,7 +56,7 @@ public class UserService {
 
     }
 
-    public void saveUserData(String username, String token) {
+    public void saveUserDataLog(String username, String token) {
         User user = new User();
         user.setLogin(username);
         user.setPassword(token);

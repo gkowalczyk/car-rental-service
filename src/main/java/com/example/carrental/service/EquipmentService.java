@@ -1,17 +1,11 @@
 package com.example.carrental.service;
 
-import com.example.carrental.domain.Car;
 import com.example.carrental.domain.Equipment;
-import com.example.carrental.domain.Rent;
-import com.example.carrental.domain.RentStatus;
-import com.example.carrental.exception.CarNotFoundException;
 import com.example.carrental.exception.EquipmentNotFoundException;
-import com.example.carrental.exception.RentNotFoundException;
 import com.example.carrental.repository.EquipmentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 

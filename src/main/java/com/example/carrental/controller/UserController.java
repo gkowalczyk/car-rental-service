@@ -41,7 +41,7 @@ public class UserController {
     @PostMapping(value = "/login")
     public ResponseEntity<Void> login(@RequestParam("user") String username, @RequestParam("password") String key) {
         String token = userService.getJWTToken(key);
-        userService.saveUserData(username, token);
+        userService.saveUserDataLog(username, token);
         return ResponseEntity.ok().build();
     }
 

@@ -27,7 +27,7 @@ public class Equipment {
     private BigDecimal price;
 
     @ManyToMany(mappedBy = "equipmentList")
-    private List<Car> carList = new ArrayList<>();
+    private List<Car> carList;
 
     public Equipment(Long id, String description, BigDecimal price) {
         this.id = id;
