@@ -1,5 +1,5 @@
-# 1.Nazwa programu
-Car Rental Service
+# 1.Nazwa programu - Car Rental Service
+
 
 ## 2.Cel aplikacji
 
