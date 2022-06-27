@@ -43,4 +43,11 @@ Restowe API napisane w Springu z wykorzystaniem następujących technologii:
 - Aktuaalizacja parametrów samochodu dla danego nr ID
 - Usunięcie samochodu z bazy danych o danym ID
 
+![alt text for image](https://github.com/gkowalczyk/car-rental-service/blob/main/src/main/resources/equipment-controller.png)
+- Sprawdzenie listy dostępnych akcesoriów do samochodu
+- Usunięcie dodatku wg nr ID
+- Aktualizacja dodatku od danym ID
+- Dodanie dodatku do bazy danych
+
+
 
