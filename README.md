@@ -51,7 +51,7 @@ Restowe API napisane w Springu z wykorzystaniem następujących technologii:
 
 ![alt text for image](https://github.com/gkowalczyk/car-rental-service/blob/main/src/main/resources/weather-controller.png)
 - Sprawdzenie pogody w danym mieście z zewnętrznego API 
-- Zwrócenie pogody we wszystkich stacjach  zewnętrznego API
+- Zwrócenie pogody we wszystkich stacjach z zewnętrznego API
 
 ![alt text for image](https://github.com/gkowalczyk/car-rental-service/blob/main/src/main/resources/fuel-station-controller.png)
 - Wyszukanie stacji w danym mieście z zewnętrznego API
@@ -65,16 +65,16 @@ Restowe API napisane w Springu z wykorzystaniem następujących technologii:
 - Aktualizacja wypożyczenia od danym ID
 - Wyliczenie całkowitego kosztu wypożyczenia dla danego ID samochodu w zależności od rodzaju wyposażenia 
 
-![alt text for image]
+![alt text for image](https://github.com/gkowalczyk/car-rental-service/blob/main/src/main/resources/trip-controller.png)
 - Wyszukanie najlepszego miejsca na wyjazd o sprzyjających warunkach pogodowych
 - Wyliczenie ilości potrzebnego paliwa na wyjazd (w trakcie)
 
-![alt text for image]
+![alt text for image](https://github.com/gkowalczyk/car-rental-service/blob/main/src/main/resources/user-controller.png)
 - Utworzenie nowego uzytkownika
 - Zablokowanie użytkownika
 - Logowanie uzytkownika i wygenerowanie App-Token, kkóry powinien być podawany  w nagłówkach (headers)
 - Usunięcie uzytkownika o danym ID
-- Zwrócenie wszsytkich dostępnych użytkowników
+- Zwrócenie wszystkich dostępnych użytkowników
 
 
 
