@@ -2,7 +2,7 @@
 
 
 - frontend (in progress):
-[https://github.com/hubertgorczynski/final-project-frontend](https://github.com/gkowalczyk/carRentalFront)
+[https://github.com/gkowalczyk/carRentalFront]
 
 
 ### Technologies
