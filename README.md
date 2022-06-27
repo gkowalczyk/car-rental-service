@@ -35,12 +35,12 @@ Restowe API napisane w Springu z wykorzystaniem następujących technologii:
 - Dodaj odpowiednie zależności do pliku application.properties - konfiguracja bazy danych SPRING
 
 ### 3.2 Endpointy: 
+
+![alt text for image](https://github.com/gkowalczyk/car-rental-service/blob/main/src/main/resources/car-controller.bmp)
 - Sprawdzenie listy dostępnych samochodów 
 - Wyszukiwarka dostępnych samochodów w zakresie czasu z uwzględnieniem klasy samochodu
 - Dodawanie samochodu do bazy danych
 - Aktuaalizacja parametrów samochodu dla danego nr ID
 - Usunięcie samochodu z bazy danych o danym ID
-![alt text for image](https://github.com/gkowalczyk/car-rental-service/blob/main/src/main/resources/car-controller.bmp)
-
 
 
