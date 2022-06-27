@@ -1,15 +1,15 @@
 package com.example.carrental;
 
-import com.example.carrental.service.JWTAuthorizationFilter;
+//import com.example.carrental.service.JWTAuthorizationFilter;
 import com.example.carrental.service.RentService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+//import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+//import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+//import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+//import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @SpringBootApplication
 public class CarRentalApplication {
@@ -17,7 +17,7 @@ public class CarRentalApplication {
     public static void main(String[] args) {
         SpringApplication.run(CarRentalApplication.class, args);
     }
-
+/*
     @EnableWebSecurity
     @Configuration
     class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -32,9 +32,8 @@ public class CarRentalApplication {
                     .antMatchers(HttpMethod.GET, "/v1/accessories/{equipmentId}").permitAll()
                     .antMatchers(HttpMethod.GET, "allcars").permitAll()
                     .antMatchers(HttpMethod.GET, "/v1/accessories/allaccessories").permitAll()
-
-                    .antMatchers(HttpMethod.GET, "allusers").permitAll()
-                    .antMatchers(HttpMethod.DELETE, "/delete/{carId}").permitAll()
+                    .antMatchers(HttpMethod.GET, "v1/cars/").permitAll()
+                    .antMatchers(HttpMethod.GET, "v1/cars/allcars/").permitAll()
                     .antMatchers(HttpMethod.DELETE, "/delete/{userId}").permitAll()
                     .antMatchers(HttpMethod.DELETE, "/v1/accessories").permitAll()
                     .antMatchers(HttpMethod.DELETE, "/v1/cars/{cardId}/").permitAll()
@@ -42,5 +41,5 @@ public class CarRentalApplication {
                     .antMatchers(HttpMethod.PUT, "/v1/rents/calculate/{rentId}/{equipmentId}").permitAll()
                     .anyRequest().authenticated();
         }
-    }
+    }*/
 }

@@ -2,11 +2,12 @@ package com.example.carrental.mapper;
 
 import com.example.carrental.domain.Car;
 import com.example.carrental.dto.CarDto;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Service
+@Component
 public class CarMapper {
 
     public Car mapToCar(CarDto carDto) {
@@ -37,7 +38,13 @@ public class CarMapper {
 
     public List<CarDto> mapToCarDtoList(List<Car> carList) {
         return carList.stream()
-                .map(c -> mapToCarDto(c))
+                .map(c -> new CarDto(c.getId(), c.getRegistration(), c.getModel(), c.getCompany(), c.getCategory(), c.getGearBox(), c.getDailyCost(), c.isAvailable()))
+                .collect(Collectors.toList());
+    }
+
+    public List<Car> mapToCarList(List<CarDto> carListDto) {
+        return carListDto.stream()
+                .map(c -> new Car(c.getId(), c.getRegistration(), c.getModel(), c.getCompany(), c.getCategory(), c.getGearBox(), c.getDailyCost(), c.isAvailable()))
                 .collect(Collectors.toList());
     }
 }

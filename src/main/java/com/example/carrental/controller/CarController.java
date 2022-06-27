@@ -15,16 +15,19 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-@RequiredArgsConstructor
+@CrossOrigin("*")
 @RequestMapping("v1/cars")
 public class CarController {
 
-    @Autowired
     private final CarService carService;
-    @Autowired
     private final CarMapper carMapper;
 
-    @GetMapping("allcars")
+    public CarController(CarService carService, CarMapper carMapper) {
+        this.carService = carService;
+        this.carMapper = carMapper;
+    }
+
+    @GetMapping("/allcars")
     public ResponseEntity<List<CarDto>> getAllCars() {
         List<Car> cars = carService.getAllCarsFromDb();
         return ResponseEntity.ok(carMapper.mapToCarDtoList(cars));

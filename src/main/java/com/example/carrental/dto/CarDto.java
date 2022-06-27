@@ -1,10 +1,7 @@
 package com.example.carrental.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -12,6 +9,8 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode
+
 public class CarDto {
 
     private Long id;
@@ -30,9 +29,9 @@ public class CarDto {
 
     private boolean isAvailable;
 
-    private List<EquipmentDto> equipmentList = new ArrayList<>();
+    private List<EquipmentDto> equipmentList;
 
-    private List<RentDto> rentList = new ArrayList<>();
+    private List<RentDto> rentList;
 
     public CarDto(Long id, String registration, String model, String company, String category, String gearBox, BigDecimal dailyCost, boolean isAvailable) {
         this.id = id;

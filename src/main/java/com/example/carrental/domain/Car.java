@@ -22,7 +22,7 @@ import java.util.List;
 )
 
 @Data
-@AllArgsConstructor
+//@AllArgsConstructor
 @NoArgsConstructor
 @Entity()
 @Table(name = "cars")

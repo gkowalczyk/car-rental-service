@@ -1,5 +1,5 @@
 package com.example.carrental.service;
-
+/*
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
@@ -63,4 +63,4 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
             return false;
         return true;
     }
-}
+}*/
