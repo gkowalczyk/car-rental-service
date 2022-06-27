@@ -6,6 +6,7 @@
 
 
 ### Technologies
+Restowe API napisane w Springu z wykorzystaniem następujących technologii:
 - Spring Boot 
 - Hibernate
 - REST API
