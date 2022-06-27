@@ -36,7 +36,7 @@ Restowe API napisane w Springu z wykorzystaniem następujących technologii:
 
 ### 3.2 Endpointy
 
-![alt text]([https://adres.pl/logo.png](https://dysksynology.quickconnect.to/d/s/pGoqKscs9CHzscX2Gag11YaqOAb8Qylg/fA6mRGwfyDYYQ_hBWlJs2anJjVxvGHne-Fb3A6vfPoQk) "Title Text")
+![alt text]([(https://dysksynology.quickconnect.to/d/s/pGoqKscs9CHzscX2Gag11YaqOAb8Qylg/fA6mRGwfyDYYQ_hBWlJs2anJjVxvGHne-Fb3A6vfPoQk](https://dysksynology.quickconnect.to/d/s/pGoqKscs9CHzscX2Gag11YaqOAb8Qylg/fA6mRGwfyDYYQ_hBWlJs2anJjVxvGHne-Fb3A6vfPoQk) "Title Text")
 
 
 
