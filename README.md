@@ -25,4 +25,8 @@ Restowe API napisane w Springu z wykorzystaniem następujących technologii:
 ## 3.Opis funkcjonalności:
 
  ### 3.1 Uruchomienie
- Do uruchomienia będą potrzebne: 
+ W celu uruchomienia programu należy wykonać następujące kroki: 
+
+- Sklonuj repozytorium za pomocą komendy: 
+`git clone https://github.com/gkowalczyk/car-rental-service.git`
+- 
