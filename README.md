@@ -1,7 +1,7 @@
 ## 1.Nazwa programu
 Car Rental Service
 
-###2.Cel aplikacji
+### 2.Cel aplikacji
 
 Cel stworzenia aplikacji to podsumowanie zgromadzonej wiedzy na temat REST API z wykorzystaniem SPRING WEB
 
