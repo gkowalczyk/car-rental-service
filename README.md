@@ -1,11 +1,17 @@
-## Car Rental Service - backend
+## 1.Nazwa programu
+Car Rental Service
 
+###2.Cel aplikacji
 
-- frontend (in progress):
+Cel stworzenia aplikacji to podsumowanie zgromadzonej wiedzy na temat REST API z wykorzystaniem SPRING WEB
+
+#### 3.Wykorzystane technologie
+
+ **Technologie Frontend** (in progress):
+- VADIN
 [https://github.com/gkowalczyk/carRentalFront]
 
-
-### Technologies
+#### Technologie Backend
 Restowe API napisane w Springu z wykorzystaniem następujących technologii:
 - Spring Boot 
 - Hibernate
@@ -13,6 +19,6 @@ Restowe API napisane w Springu z wykorzystaniem następujących technologii:
 - JDBC
 - JUnit5
 - Mockito
-- Vaadin (frontend)
+- Spring Security
 - Lombok
 
