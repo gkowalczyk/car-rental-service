@@ -1,17 +1,12 @@
 package com.example.carrental.controller;
 
 
-import com.example.carrental.domain.Car;
 import com.example.carrental.domain.Equipment;
-import com.example.carrental.dto.CarDto;
 import com.example.carrental.dto.EquipmentDto;
-import com.example.carrental.mapper.CarMapper;
 import com.example.carrental.mapper.EquipmentMapper;
-import com.example.carrental.service.CarService;
 import com.example.carrental.service.EquipmentService;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -24,14 +19,12 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import java.math.BigDecimal;
 import java.util.List;
 
-import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringJUnitWebConfig
-@WebMvcTest(EquipmentController.class)
-public class EquipmentController {
+@WebMvcTest(EquipmentControllerTest.class)
+public class EquipmentControllerTest {
 
 
     @Autowired

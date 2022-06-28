@@ -2,6 +2,7 @@ package com.example.carrental.client;
 
 import com.example.carrental.config.WeatherApiConfig;
 import com.example.carrental.dto.WeatherStationDto;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

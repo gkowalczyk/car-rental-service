@@ -1,6 +1,5 @@
 package com.example.carrental.controller;
 
-import com.example.carrental.client.WeatherClient;
 import com.example.carrental.domain.WeatherStation;
 import com.example.carrental.dto.WeatherStationDto;
 import com.example.carrental.mapper.WeatherMapper;
@@ -11,21 +10,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.Mockito.when;
 
 @SpringJUnitWebConfig
-@WebMvcTest(WeatherController.class)
-public class WeatherController {
+@WebMvcTest(WeatherControllerTest.class)
+public class WeatherControllerTest {
 
     @Autowired
     MockMvc mockMvc;

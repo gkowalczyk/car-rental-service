@@ -12,3 +12,4 @@ public class WeatherApiConfig {
     private String weatherApiEndpoint;
 
 }
+

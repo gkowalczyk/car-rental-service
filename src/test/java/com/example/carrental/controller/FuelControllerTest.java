@@ -31,7 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringJUnitWebConfig
 @WebMvcTest(FuelStationController.class)
 
-public class FuelController {
+public class FuelControllerTest {
 
 
     @Autowired

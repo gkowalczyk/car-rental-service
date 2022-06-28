@@ -6,7 +6,7 @@ import lombok.*;
 @AllArgsConstructor
 @EqualsAndHashCode
 @NoArgsConstructor
-@Data
+@Getter
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherStationDto {
     @JsonProperty("id_stacji")

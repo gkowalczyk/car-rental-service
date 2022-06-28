@@ -11,7 +11,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class WeatherService {
 
-    private final WeatherClient weatherClient;
+    private  WeatherClient weatherClient;
 
     public List<WeatherStationDto> fetchWeatherBoards() {
         return weatherClient.getWeather();

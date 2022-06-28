@@ -13,7 +13,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 
 import static org.mockito.ArgumentMatchers.anyList;
@@ -26,8 +25,8 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @SpringJUnitWebConfig
-@WebMvcTest(CarController.class)
-public class CarController {
+@WebMvcTest(CarControllerTest.class)
+public class CarControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -40,7 +39,7 @@ public class CarController {
     void shouldFetchCarDtoList() throws Exception {
         List<CarDto> carDtoList = List.of(new CarDto(1L,"DW123476", "XC60", "Volvo", "premium", "automatic", new BigDecimal(50), true));
         List<Car> carList = List.of(new Car(1L,"DW123476", "XC60", "Volvo", "premium", "automatic", new BigDecimal(50), true));
-        //when(carService.getAllCarsFromDb()).thenReturn(carList);
+        when(carService.getAllCarsFromDb()).thenReturn(carList);
 when(carMapper.mapToCarDtoList(anyList())).thenReturn(carDtoList);
 mockMvc
         .perform(MockMvcRequestBuilders.get("/v1/cars/allcars")
@@ -54,9 +53,5 @@ mockMvc
         .andExpect(jsonPath("$[0].gearBox", Matchers.is("automatic")))
         .andExpect(jsonPath("$[0].dailyCost", Matchers.is(50)))
         .andExpect(jsonPath("$[0].isAvailable", Matchers.is(true)));
-
-
-
     }
-
 }
