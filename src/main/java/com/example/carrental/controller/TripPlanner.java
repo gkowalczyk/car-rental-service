@@ -2,8 +2,6 @@ package com.example.carrental.controller;
 
 import com.example.carrental.domain.WeatherStation;
 import com.example.carrental.dto.WeatherStationDto;
-import com.example.carrental.exception.EquipmentNotFoundException;
-import com.example.carrental.exception.RentNotFoundException;
 import com.example.carrental.mapper.CarMapper;
 import com.example.carrental.mapper.WeatherMapper;
 import com.example.carrental.service.CarService;

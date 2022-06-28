@@ -33,7 +33,7 @@ public class MailScheduler {
         this.carRepository = carRepository;
     }
 
-   // @Scheduled(fixedDelay = 10000)
+    // @Scheduled(fixedDelay = 10000)
     @Scheduled(cron = "0 0 00 * * *")
     public void dailyMailStatusCarAccessForOwner() {
 

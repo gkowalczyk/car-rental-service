@@ -1,15 +1,13 @@
 package com.example.carrental.mapper;
 
-import com.example.carrental.domain.Car;
-import com.example.carrental.domain.Equipment;
-import com.example.carrental.dto.CarDto;
-import com.example.carrental.dto.EquipmentDto;
-import org.springframework.stereotype.Service;
 
+import com.example.carrental.domain.Equipment;
+import com.example.carrental.dto.EquipmentDto;
+import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Service
+@Component
 public class EquipmentMapper {
 
     public Equipment mapToEquipment(EquipmentDto equipmentDto) {

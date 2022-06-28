@@ -1,8 +1,7 @@
 package com.example.carrental.mapper;
 
-import com.example.carrental.domain.Car;
+
 import com.example.carrental.domain.User;
-import com.example.carrental.dto.CarDto;
 import com.example.carrental.dto.UserDto;
 import org.springframework.stereotype.Service;
 import java.util.List;

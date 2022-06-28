@@ -13,7 +13,7 @@ public class FuelService {
 
     private final FuelClient fuelClient;
 
-    public List<FuelStationDto> fuelStationDtos() {
+    public List<FuelStationDto> getFuelStationDto() {
         return fuelClient.getFuelStation();
     }
 }

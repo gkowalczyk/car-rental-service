@@ -1,12 +1,11 @@
 package com.example.carrental.dto;
 
-import com.example.carrental.domain.Rent;
-import lombok.AllArgsConstructor;
+
 import lombok.Getter;
 import java.util.List;
 
 @Getter
-//@AllArgsConstructor
+
 public class UserDto {
 
     private Long id;

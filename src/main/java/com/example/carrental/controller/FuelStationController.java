@@ -26,7 +26,7 @@ public class FuelStationController {
 
     @GetMapping("searchstation")
     public ResponseEntity<List<FuelStationDto>> findTheNearestStation(@RequestParam(value = "station") String station) {
-        List<FuelStation> fuelStationList = fuelMapper.mapToFuel(fuelService.fuelStationDtos())
+        List<FuelStation> fuelStationList = fuelMapper.mapToFuel(fuelService.getFuelStationDto())
                 .stream()
                 .filter(w -> w.getMiejscowosc().equals(station))
                 .collect(Collectors.toList());
@@ -36,9 +36,8 @@ public class FuelStationController {
 
     @GetMapping("allstations")
     public ResponseEntity<List<FuelStationDto>> checkAllStations() {
-        List<FuelStation> fuelStationList = fuelMapper.mapToFuel(fuelService.fuelStationDtos());
+        List<FuelStation> fuelStationList = fuelMapper.mapToFuel(fuelService.getFuelStationDto());
         return ResponseEntity.ok(fuelMapper.mapToFuelDto(fuelStationList));
     }
-
 }
 

@@ -6,6 +6,7 @@ import com.example.carrental.repository.EquipmentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 

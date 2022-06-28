@@ -3,12 +3,16 @@ package com.example.carrental.service;
 import com.example.carrental.domain.User;
 import com.example.carrental.exception.UserNotFoundException;
 import com.example.carrental.repository.UserRepository;
-//import io.jsonwebtoken.Jwts;
-//import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataAccessException;
-//import org.springframework.security.core.GrantedAuthority;
-//import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -34,7 +38,7 @@ public class UserService {
         user.setActive(false);
         return userRepository.save(user);
     }
-/*
+
     public String getJWTToken(String username) {
 
         String secretKey = "mySecretKey";
@@ -54,7 +58,7 @@ public class UserService {
                         secretKey.getBytes()).compact();
         return "login_token " + token;
 
-    }*/
+    }
 
     public void saveUserDataLog(String username, String token) {
         User user = new User();

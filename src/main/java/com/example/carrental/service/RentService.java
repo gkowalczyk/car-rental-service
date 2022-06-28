@@ -112,7 +112,7 @@ public class RentService {
                 rentUpdate.setRentStatus(RentStatus.IN_PROGRESS);
                 repository.save(rentUpdate);
                 log.info("Calculation for case:" + ECONOMIC + " confirmed");
-               return calculate;
+                return calculate;
             case MIDDLE:
                 CarOrder carOrderPlus = new LowComfortCar();
                 carOrderPlus = new MiddleComfortCar(carOrderPlus);

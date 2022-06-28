@@ -1,16 +1,12 @@
 package com.example.carrental.service;
 
 import com.example.carrental.domain.Car;
-import com.example.carrental.domain.Equipment;
-import com.example.carrental.domain.Rent;
 import com.example.carrental.exception.CarNotFoundException;
 import com.example.carrental.repository.CarRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;

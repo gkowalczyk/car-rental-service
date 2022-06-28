@@ -5,12 +5,11 @@ import com.example.carrental.dto.CarDto;
 import com.example.carrental.exception.CarNotFoundException;
 import com.example.carrental.mapper.CarMapper;
 import com.example.carrental.service.CarService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.time.LocalDate;
 import java.util.List;
 

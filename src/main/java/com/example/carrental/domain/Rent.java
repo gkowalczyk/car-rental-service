@@ -1,11 +1,9 @@
 package com.example.carrental.domain;
 
-import com.example.carrental.dto.CarDto;
-import com.example.carrental.dto.UserDto;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -44,6 +42,5 @@ public class Rent {
 
     @Column(name = "renting_status")
     private RentStatus rentStatus;
-
 }
 

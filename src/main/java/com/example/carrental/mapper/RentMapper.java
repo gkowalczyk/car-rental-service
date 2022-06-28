@@ -7,7 +7,6 @@ import com.example.carrental.dto.CarDto;
 import com.example.carrental.dto.RentDto;
 import com.example.carrental.dto.UserDto;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
