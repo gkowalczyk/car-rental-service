@@ -39,7 +39,7 @@ public class FuelControllerTest {
     @MockBean
     private FuelService fuelService;
     @MockBean
-    private FuelMapper fuelMapperr;
+    private FuelMapper fuelMapper;
 
 
     @Test
@@ -50,7 +50,7 @@ public class FuelControllerTest {
         List<FuelStation> fuelStationList = List.of(new FuelStation(54334L, "Wroclaw_Orlen", "Wroclaw", "Olen Krzyki", "30",
                 true, true, true, "0", "Swobodna"));
         when(fuelService.getFuelStationDto()).thenReturn(fuelStationDtoList);
-        when(fuelMapperr.mapToFuelDto(fuelStationList)).thenReturn(fuelStationDtoList);
+        when(fuelMapper.mapToFuelDto(fuelStationList)).thenReturn(fuelStationDtoList);
 
         mockMvc
                 .perform(MockMvcRequestBuilders

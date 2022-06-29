@@ -18,7 +18,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-public class MapperTestSuite {
+public class CarMapperTestSuite {
 
     @Autowired
     private CarMapper carMapper;

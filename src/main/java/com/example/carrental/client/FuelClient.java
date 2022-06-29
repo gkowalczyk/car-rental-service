@@ -27,7 +27,7 @@ public class FuelClient {
 
     public List<FuelStationDto> getFuelStation() {
 
-        URI url = UriComponentsBuilder.fromHttpUrl(fuelApiConfig.getFuelStationApiEndpoint() + "InfrastructureFuelStation")
+        URI url = UriComponentsBuilder.fromHttpUrl(fuelApiConfig.getFuelStationApiEndpoint() + "/InfrastructureFuelStation")
                 .build()
                 .encode()
                 .toUri();

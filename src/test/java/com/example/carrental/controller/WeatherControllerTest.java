@@ -40,7 +40,7 @@ public class WeatherControllerTest {
                 "10", "100", "5", "0", "1012"));
 
         when(weatherService.fetchWeatherBoards()).thenReturn(weatherStationsDto);
-        //when(weatherMapper.mapToBoardDto(weatherStations)).thenReturn(weatherStationsDto);
+        when(weatherMapper.mapToBoardDto(weatherStations)).thenReturn(weatherStationsDto);
 
         mockMvc
                 .perform(MockMvcRequestBuilders
