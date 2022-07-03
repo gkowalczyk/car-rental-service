@@ -4,32 +4,23 @@ import com.example.carrental.domain.*;
 import com.example.carrental.dto.CarDto;
 import com.example.carrental.dto.RentDto;
 import com.example.carrental.dto.UserDto;
-import com.example.carrental.exception.CarNotFoundException;
-import com.example.carrental.exception.EquipmentNotFoundException;
-import com.example.carrental.exception.RentNotFoundException;
-import com.example.carrental.exception.UserNotFoundException;
 import com.example.carrental.mapper.RentMapper;
+import com.example.carrental.repository.RentRepository;
 import com.example.carrental.service.RentService;
 import com.google.gson.Gson;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.web.bind.annotation.*;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
-
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -47,6 +38,8 @@ public class RentControllerTest {
     private RentService rentService;
     @MockBean
     private RentMapper rentMapper;
+    @MockBean
+    private RentRepository rentRepository;
 
     @Test
     void shouldFetchRents() throws Exception {
@@ -234,13 +227,13 @@ public class RentControllerTest {
 
         Equipment equipment = new Equipment(1L,"",new BigDecimal(100));
 
-        when(rentService.calculateRentCostFactory(rent.getId(),equipment.getId(), "VIP"));
-
+        when(rentService.calculateRentCostFactory(rent.getId(),equipment.getId(), "VIP")).thenReturn(rent.getTotalCost());
+        when(rentMapper.mapToRentDto(rent)).thenReturn(rentDto);
         mockMvc
                 .perform(MockMvcRequestBuilders
                         .put("/v1/rents/calculate/1/1")
                         .contentType(MediaType.APPLICATION_JSON))
-                        //.param("VIP"))
+                        //.param("category")
                       .andExpect(status().is(200))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.rentDto.totalCost", Matchers.is(260.0)));
 
