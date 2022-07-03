@@ -43,7 +43,7 @@ public class UserControllerTest {
     private UserService userService;
 
     @Test
-    void shouldFetchUsersBoards() throws Exception {
+    void shouldFetchUsers() throws Exception {
 
         List<UserDto> userDtoList = List.of(new UserDto(1L, "Jan", "Kowalski", "jkowalski", "yourjwttoken",
                 "jankowalski@wp.pl", "4568908654", true));

@@ -32,7 +32,7 @@ public class WeatherControllerTest {
 
 
     @Test
-    void shouldFetchWeatherBoards() throws Exception {
+    void shouldFetchWeather() throws Exception {
 
         List<WeatherStationDto> weatherStationsDto = List.of(new WeatherStationDto("1", "Wroclaw", "01.06.2022", "12:00", "30",
                 "10", "100", "5", "0", "1012"));
@@ -46,7 +46,7 @@ public class WeatherControllerTest {
                 .perform(MockMvcRequestBuilders
                         .get("/v1/weather/allcity")
                         .contentType(MediaType.APPLICATION_JSON))
-                      //  .characterEncoding("UTF-8"))
+                //  .characterEncoding("UTF-8"))
                 .andExpect(MockMvcResultMatchers.status().is(200))
                 .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(1)));
 

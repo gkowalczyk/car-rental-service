@@ -25,7 +25,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @SpringJUnitWebConfig
-@WebMvcTest(CarControllerTest.class)
+@WebMvcTest(CarController.class)
 public class CarControllerTest {
 
     @Autowired
@@ -37,21 +37,22 @@ public class CarControllerTest {
 
     @Test
     void shouldFetchCarDtoList() throws Exception {
-        List<CarDto> carDtoList = List.of(new CarDto(1L,"DW123476", "XC60", "Volvo", "premium", "automatic", new BigDecimal(50), true));
-        List<Car> carList = List.of(new Car(1L,"DW123476", "XC60", "Volvo", "premium", "automatic", new BigDecimal(50), true));
+        List<CarDto> carDtoList = List.of(new CarDto(1L, "DW123476", "XC60", "Volvo", "premium", "automatic", new BigDecimal(50), true));
+        List<Car> carList = List.of(new Car(1L, "DW123476", "XC60", "Volvo", "premium", "automatic", new BigDecimal(50), true));
+
         when(carService.getAllCarsFromDb()).thenReturn(carList);
-when(carMapper.mapToCarDtoList(anyList())).thenReturn(carDtoList);
-mockMvc
-        .perform(MockMvcRequestBuilders.get("/v1/cars/allcars")
-                .contentType(MediaType.APPLICATION_JSON))
-        .andExpect(status().is(200))
-        .andExpect(jsonPath("$[0].id", Matchers.is(1)))
-        .andExpect(jsonPath("$[0].registration", Matchers.is("DW123476")))
-        .andExpect(jsonPath("$[0].model", Matchers.is("XC60")))
-        .andExpect(jsonPath("$[0].company", Matchers.is("Volvo")))
-        .andExpect(jsonPath("$[0].category", Matchers.is("premium")))
-        .andExpect(jsonPath("$[0].gearBox", Matchers.is("automatic")))
-        .andExpect(jsonPath("$[0].dailyCost", Matchers.is(50)))
-        .andExpect(jsonPath("$[0].isAvailable", Matchers.is(true)));
+        when(carMapper.mapToCarDtoList(anyList())).thenReturn(carDtoList);
+        mockMvc
+                .perform(MockMvcRequestBuilders.get("/v1/cars/allcars")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().is(200))
+                .andExpect(jsonPath("$[0].id", Matchers.is(1)))
+                .andExpect(jsonPath("$[0].registration", Matchers.is("DW123476")))
+                .andExpect(jsonPath("$[0].model", Matchers.is("XC60")))
+                .andExpect(jsonPath("$[0].company", Matchers.is("Volvo")))
+                .andExpect(jsonPath("$[0].category", Matchers.is("premium")))
+                .andExpect(jsonPath("$[0].gearBox", Matchers.is("automatic")))
+                .andExpect(jsonPath("$[0].dailyCost", Matchers.is(50)))
+                .andExpect(jsonPath("$[0].isAvailable", Matchers.is(true)));
     }
 }

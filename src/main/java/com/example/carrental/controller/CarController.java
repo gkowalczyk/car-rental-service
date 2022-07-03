@@ -26,7 +26,7 @@ public class CarController {
         this.carMapper = carMapper;
     }
 
-    @GetMapping("/allcars")
+    @GetMapping("allcars")
     public ResponseEntity<List<CarDto>> getAllCars() {
         List<Car> cars = carService.getAllCarsFromDb();
         return ResponseEntity.ok(carMapper.mapToCarDtoList(cars));

@@ -38,7 +38,9 @@ public class RentController {
 
     @PostMapping(value = "/newcardrent/{userId}/{carId}")
     public ResponseEntity<RentDto> createRentCardForUserId(@PathVariable Long userId, @PathVariable Long carId) throws CarNotFoundException, UserNotFoundException {
+
         return ResponseEntity.ok(rentMapper.mapToRentDto(rentService.createNewCardRent(userId, carId)));
+
     }
 
     @DeleteMapping(value = "/cancelrent/{cardId}")

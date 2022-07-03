@@ -43,7 +43,7 @@ public class FuelControllerTest {
 
 
     @Test
-    void shouldFetchWeatherBoards() throws Exception {
+    void shouldFetchWeather() throws Exception {
 
         List<FuelStationDto> fuelStationDtoList = List.of(new FuelStationDto(54334L, "Wroclaw_Orlen", "Wroclaw", "Olen Krzyki", "30",
                 true, true, true, "0", "Swobodna"));
@@ -57,7 +57,7 @@ public class FuelControllerTest {
                         .get("/v1/stations/allstations")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().is(200))
-               // .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(1)))
+                // .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(1)))
                 .andExpect(jsonPath("$[0].dkn", Matchers.is(54334)))
                 .andExpect(jsonPath("$[0].nazwa", Matchers.is("Wroclaw_Orlen")))
                 .andExpect(jsonPath("$[0].miejscowosc", Matchers.is("Wroclaw")))

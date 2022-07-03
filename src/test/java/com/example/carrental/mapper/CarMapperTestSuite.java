@@ -50,8 +50,6 @@ public class CarMapperTestSuite {
     System.out.println(carList.size());
     //Then
     assertEquals(carListDto.get(0).getModel().equals("FORD"),"FORD" );
-
-
 }
 
 }

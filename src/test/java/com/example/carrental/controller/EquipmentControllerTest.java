@@ -35,20 +35,20 @@ public class EquipmentControllerTest {
     private EquipmentMapper equipmentMapper;
 
 
-        @Test
-        void shouldFetchCarDtoList() throws Exception {
-            List<EquipmentDto> equipmentDtoList = List.of(new EquipmentDto(1L,"extra gas", new BigDecimal(50)));
-            List<Equipment> equipmentList = List.of(new Equipment(1L,"extra gas", new BigDecimal(50)));
-            when(equipmentService.getAllAccessories()).thenReturn(equipmentList);
-            when(equipmentMapper.mapToEquipmentDtoList(equipmentList)).thenReturn(equipmentDtoList);
-            mockMvc
-                    .perform(MockMvcRequestBuilders
-                            .get("/v1/accessories/allaccessories")
-                            .contentType(MediaType.APPLICATION_JSON))
-                    .andExpect((MockMvcResultMatchers.status()).is(200))
-                    .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(1)))
-                   .andExpect(jsonPath("$[0].id", Matchers.is(1)))
-                    .andExpect(jsonPath("$[0].description", Matchers.is("extra gas")))
-                    .andExpect(jsonPath("$[0].price", Matchers.is(50)));
+    @Test
+    void shouldFetchCarDtoList() throws Exception {
+        List<EquipmentDto> equipmentDtoList = List.of(new EquipmentDto(1L, "extra gas", new BigDecimal(50)));
+        List<Equipment> equipmentList = List.of(new Equipment(1L, "extra gas", new BigDecimal(50)));
+        when(equipmentService.getAllAccessories()).thenReturn(equipmentList);
+        when(equipmentMapper.mapToEquipmentDtoList(equipmentList)).thenReturn(equipmentDtoList);
+        mockMvc
+                .perform(MockMvcRequestBuilders
+                        .get("/v1/accessories/allaccessories")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect((MockMvcResultMatchers.status()).is(200))
+                .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(1)))
+                .andExpect(jsonPath("$[0].id", Matchers.is(1)))
+                .andExpect(jsonPath("$[0].description", Matchers.is("extra gas")))
+                .andExpect(jsonPath("$[0].price", Matchers.is(50)));
     }
 }
