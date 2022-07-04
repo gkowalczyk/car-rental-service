@@ -1,4 +1,4 @@
-#                              >>>>>>>>>>>> Car Rental Service <<<<<<<<<<<<
+#                              Car Rental Service 
 
 
 ## 1.Cel aplikacji
